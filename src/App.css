@@ -1,38 +1,135 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 0px 20px;
+  padding: 10px;
+  color: darkblue;
+  font-size: 12px;
+}
+
+.container {
+  background-color: whitesmoke;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  list-style: none;
+  margin-bottom: 0;
+}
+
+.contact-card {
+  border: 2px black solid;
+  border-radius: 10px;
+  display: flex;
+  margin: 10px;
+  padding: 5px;
+  position: relative;
+}
+
+.categories {
+  margin-left: 15px;
+}
+
+.delete-btn,
+.hideModal-btn {
+  background: white;
+  border: 2px black solid;
+  border-radius: 20px;
+  top: 6px;
+  color: black;
+  font-size: 10px;
+  font-weight: bold;
+  margin: 0 5px 5px 0;
+  outline: none;
+  position: absolute;
+  cursor: pointer;
+  right: 3px;
+}
+
+.delete-btn:hover,
+.hideModal-btn:hover {
+  background-color: black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.no-matches {
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  border: 3px solid red;
+  width: 40%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.add-contact-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.add-contact-container h2 {
+  font-size: 40px;
+}
+
+.add-contact-btn {
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+  border-radius: 7px;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  outline: none;
+}
+
+.add-contact-btn:hover {
+  background-color: rgb(9, 9, 165);
+}
+
+.filter-options {
+  background: rgb(231, 229, 229);
+  cursor: pointer;
+  border-radius: 7px;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  outline: none;
+}
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.form-input {
+  border: 1px black solid;
+  border-radius: 5px;
+  font-size: 20px;
+  margin-top: 15px;
+  padding: 5px;
+}
+
+.submit-btn {
+  background-color: rgb(231, 185, 31);
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 5px;
+}
+
+.submit-btn:hover {
+  background-color: rgb(197, 158, 29);
+}
+
+.ReactModal__Content,
+.ReactModal__Content--after-open {
+  width: 40%;
+  margin: auto;
+}
+
+img {
+  border-radius: 5px;
 }
