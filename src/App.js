@@ -15,6 +15,19 @@ class App extends Component {
     };
   }
 
+  handleSubmitContact = ({ first, last, age, gender, image }) => {
+    const { contacts } = this.state;
+    const newContact = {
+      picture: { large: image },
+      name: { first, last },
+      dob: { age },
+      gender,
+    };
+    this.setState({
+      contacts: [...contacts, newContact],
+    });
+  };
+
   deleteContact = (deletedContact) => {
     const contacts = this.state.contacts.filter(
       (contact) => contact.login.uuid !== deletedContact.login.uuid
@@ -74,8 +87,12 @@ class App extends Component {
     return filteredData;
   };
 
+  handlePageChange = (page) => {
+    console.log(page);
+  };
+
   componentDidMount() {
-    fetch("https://randomuser.me/api/?results=20")
+    fetch("https://randomuser.me/api/?results=30")
       .then((res) => res.json())
       .then(({ results }) => {
         this.setState({
@@ -99,7 +116,7 @@ class App extends Component {
               value={this.state.filter}
               onChange={this.handleChange}
             >
-              <option value="">Filter by</option>;
+              <option value="">None</option>;
               <option value="male">Male Only</option>;
               <option value="female">Female Only</option>
               <option value="over30">Over 30</option>;
@@ -116,7 +133,10 @@ class App extends Component {
           />
 
           <Modal isOpen={this.state.isOpen} ariaHideApp={false}>
-            <AddContactForm contacts={contacts} hideModal={this.hideModal} />
+            <AddContactForm
+              hideModal={this.hideModal}
+              submitContact={this.handleSubmitContact}
+            />
           </Modal>
         </div>
       );

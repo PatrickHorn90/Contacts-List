@@ -4,9 +4,9 @@ class AddContactForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      image: "https://randomuser.me/api/portraits/med/men/39.jpg",
-      firstName: "",
-      lastName: "",
+      image: "https://randomuser.me/api/portraits/men/39.jpg",
+      first: "",
+      last: "",
       gender: "",
       age: "",
     };
@@ -18,14 +18,10 @@ class AddContactForm extends Component {
     });
   };
 
-  onSubmit = () => {
-    console.log("working");
-  };
-
   render() {
-    const { hideModal } = this.props;
-    const { firstName } = this.state;
-    const { lastName } = this.state;
+    const { hideModal, submitContact } = this.props;
+    const { first } = this.state;
+    const { last } = this.state;
     const { gender } = this.state;
     const { age } = this.state;
     return (
@@ -36,17 +32,17 @@ class AddContactForm extends Component {
         <h2>Add Contact</h2>
         <form className="form-inputs">
           <input
-            name="firstName"
+            name="first"
             className="form-input"
             placeholder="First Name"
-            value={firstName}
+            value={first}
             onChange={(e) => this.change(e)}
           />
           <input
-            name="lastName"
+            name="last"
             className="form-input"
             placeholder="Last Name..."
-            value={lastName}
+            value={last}
             onChange={(e) => this.change(e)}
           />
           <input
@@ -64,7 +60,10 @@ class AddContactForm extends Component {
             onChange={(e) => this.change(e)}
           />
         </form>
-        <button onClick={() => this.onSubmit()} className="submit-btn">
+        <button
+          onClick={() => submitContact(this.state)}
+          className="submit-btn"
+        >
           Submit
         </button>
       </div>

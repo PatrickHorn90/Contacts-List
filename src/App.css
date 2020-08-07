@@ -22,8 +22,9 @@
   border-radius: 10px;
   display: flex;
   margin: 10px;
-  padding: 5px;
+  padding: 5px 5px 0 5px;
   position: relative;
+  align-items: center;
 }
 
 .categories {
@@ -32,11 +33,11 @@
 
 .delete-btn,
 .hideModal-btn {
-  background: white;
-  border: 2px black solid;
-  border-radius: 20px;
+  background: red;
+  border: 2px none;
+  border-radius: 25px;
   top: 6px;
-  color: black;
+  color: white;
   font-size: 10px;
   font-weight: bold;
   margin: 0 5px 5px 0;
@@ -48,7 +49,7 @@
 
 .delete-btn:hover,
 .hideModal-btn:hover {
-  background-color: black;
+  background-color: darkred;
   color: white;
 }
 
@@ -132,4 +133,26 @@
 
 img {
   border-radius: 5px;
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: center;
+}
+
+.page-link {
+  border: 1px solid rgb(172, 165, 165);
+  border-radius: 5px;
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 3px;
+}
+
+.page-link:hover {
+  background-color: rgb(190, 189, 189);
 }

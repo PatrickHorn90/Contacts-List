@@ -10,10 +10,10 @@ class Contacts extends Component {
     } else {
       return (
         <div>
-          <ul className="container">
+          <div className="container">
             {contacts.map((contact, index) => (
-              <li key={index} className="contact-card">
-                <img src={contact.picture.large} alt="loading..." />
+              <div key={index} className="contact-card">
+                <img src={contact.picture.large} alt="profile pic" />
                 <div className="categories">
                   <h3>First Name: {contact.name.first}</h3>
                   <h3>Last Name: {contact.name.last}</h3>
@@ -26,9 +26,9 @@ class Contacts extends Component {
                 >
                   X
                 </button>
-              </li>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       );
     }
